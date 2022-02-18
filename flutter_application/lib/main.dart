@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './color.dart';
-import 'bgslid.dart';
+import './bgslid.dart';
 
 void main() => runApp(const FlutterApp());
 
@@ -35,7 +35,7 @@ class MyHomePage extends StatelessWidget {
       body: Column(children: [
         Container(
           alignment: Alignment.center,
-          padding: EdgeInsets.all(80),
+          padding: EdgeInsets.all(20),
         ),
         Container(
           child: (Image.asset('assets/images/puppy1.jpg')),
@@ -50,13 +50,20 @@ class MyHomePage extends StatelessWidget {
                 BoxShadow(color: Colors.black, spreadRadius: 3, blurRadius: 7)
               ]),
         ),
-        Container(
-          child: ColorChanger(),
-        ),
-        Container(
-          child: BgSlid(),
-        ),
+        ColorChanger(),
+        Bgslid(),
       ]),
+    );
+  }
+}
+
+class Slaideri extends StatelessWidget {
+  const Slaideri({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Bgslid(),
     );
   }
 }
