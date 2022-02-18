@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import './color.dart';
+import 'bgslid.dart';
+
 void main() => runApp(const FlutterApp());
 
 class FlutterApp extends StatelessWidget {
@@ -24,34 +27,36 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Center(
-        child: Image.asset('assets/images/puppy1.jpg'),
+      appBar: AppBar(
+        title: Text(title),
+        backgroundColor: Colors.grey,
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer menu'),
-            ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
+      backgroundColor: Colors.blueGrey,
+      body: Column(children: [
+        Container(
+          alignment: Alignment.center,
+          padding: EdgeInsets.all(80),
         ),
-      ),
+        Container(
+          child: (Image.asset('assets/images/puppy1.jpg')),
+          decoration: const BoxDecoration(
+              border: Border(
+                top: BorderSide(width: 0.5, color: Colors.black),
+                bottom: BorderSide(width: 0.5, color: Colors.black),
+                right: BorderSide(width: 0.5, color: Colors.black),
+                left: BorderSide(width: 0.5, color: Colors.black),
+              ),
+              boxShadow: [
+                BoxShadow(color: Colors.black, spreadRadius: 3, blurRadius: 7)
+              ]),
+        ),
+        Container(
+          child: ColorChanger(),
+        ),
+        Container(
+          child: BgSlid(),
+        ),
+      ]),
     );
   }
 }
