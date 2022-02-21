@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Drawer extends StatelessWidget {
+class BurgerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: BurgerMenu(),
       body: Center(
         child: ListView(
           padding: EdgeInsets.zero,

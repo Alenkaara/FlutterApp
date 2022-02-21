@@ -1,30 +1,41 @@
 import 'package:flutter/material.dart';
 
-class Bgslid extends StatefulWidget {
-  const Bgslid({Key? key}) : super(key: key);
-
+class Slaideri extends StatefulWidget {
+  const Slaideri({Key? key, required this.SliderTitle}) : super(key: key);
+  final String SliderTitle;
   @override
-  _State createState() => _State();
+  _Slaideri createState() => _Slaideri();
 }
 
-class _State extends State<Slider> {
-  RangeValues _rangeSliderDiscreteValues = const RangeValues(0, 100);
-
+class _Slaideri extends State<Slaideri> {
+  int age = 10;
   @override
   Widget build(BuildContext context) {
-    return RangeSlider(
-      values: _rangeSliderDiscreteValues,
-      min: 0,
-      max: 100,
-      labels: RangeLabels(
-        _rangeSliderDiscreteValues.start.round().toString(),
-        _rangeSliderDiscreteValues.end.round().toString(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.SliderTitle),
       ),
-      onChanged: (values) {
-        setState(() {
-          _rangeSliderDiscreteValues = values;
-        });
-      },
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Slider(
+            value: age.toDouble(),
+            onChanged: (value) {
+              setState(() {
+                age = value.toInt();
+              });
+            },
+            min: 5,
+            max: 100,
+          ),
+          Text(
+            "Dog cuteness level: " + age.toString(),
+            style: const TextStyle(
+              fontSize: 16.0,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

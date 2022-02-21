@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './color.dart';
 import './bgslid.dart';
+import './drawer.dart';
 
 void main() => runApp(const FlutterApp());
 
@@ -32,10 +33,28 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.grey,
       ),
       backgroundColor: Colors.blueGrey,
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.deepPurpleAccent,
+              ),
+              child: Text('Hamburger menu'),
+            ),
+            ListTile(
+              title: const Text('Filler 1'),
+            ),
+            ListTile(
+              title: const Text('Filler 2'),
+            ),
+          ],
+        ),
+      ),
       body: Column(children: [
         Container(
-          alignment: Alignment.center,
-          padding: EdgeInsets.all(20),
+          height: 20,
         ),
         Container(
           child: (Image.asset('assets/images/puppy1.jpg')),
@@ -50,20 +69,16 @@ class MyHomePage extends StatelessWidget {
                 BoxShadow(color: Colors.black, spreadRadius: 3, blurRadius: 7)
               ]),
         ),
-        ColorChanger(),
-        Bgslid(),
+        Container(
+          height: 200,
+          child: ColorChanger(),
+        ),
+        Container(
+          width: 300,
+          height: 167,
+          child: Slaideri(SliderTitle: 'Dog cuteness Slider'),
+        ),
       ]),
-    );
-  }
-}
-
-class Slaideri extends StatelessWidget {
-  const Slaideri({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Bgslid(),
     );
   }
 }
