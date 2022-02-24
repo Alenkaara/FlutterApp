@@ -1,6 +1,5 @@
 import 'dart:math';
 
-// import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class ColorChanger extends StatefulWidget {
@@ -29,40 +28,13 @@ class CustomTileState extends State<ColorChanger> {
     setState(() => index = random.nextInt(10));
   }
 
-  // late Color color;
-  // late final AudioCache audioCache;
-
   @override
   void initState() {
     super.initState();
-
-    // color = Colors.blue;
-    // audioCache = AudioCache(
-    //   prefix: 'audio/',
-    //   fixedPlayer: AudioPlayer()..setReleaseMode(ReleaseMode.STOP),
-    // );
   }
 
   @override
   Widget build(BuildContext context) {
-    // return Container(
-    //   margin: EdgeInsets.all(80),
-    //   color: color,
-    //   child: ListTile(
-    //     title: Text('Click me to change the color'),
-    //     onTap: () {
-    //       setState(() {
-    //         // audioCache.play('dogbark.mp3');
-    //         // if (color == Colors.red) {
-    //         //   color = Colors.green;
-    //         // } else {
-    //         color:
-    //         Colors.primaries[Random().nextInt(Colors.primaries.length)];
-    //         // }
-    //       });
-    //     },
-    //   ),
-    // );
     return Container(
       margin: EdgeInsets.all(80),
       child: RaisedButton(
